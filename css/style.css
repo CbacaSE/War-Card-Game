@@ -1,0 +1,136 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  background: rgb(18,17,18);
+background: radial-gradient(circle, rgba(18,17,18,1) 0%, rgba(48,57,56,1) 100%) no-repeat;
+  height:150vh;
+  font-family: 'Finger Paint', sans-serif;
+}
+.hidden {
+  display:none;
+}
+h1 {
+  display:block;
+  font-size:86px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  width:600px;
+}
+h2 {
+  display:block;
+  color:#FFFFFF;
+  font-size:48px;
+  margin:2% auto;
+  text-align:center;
+  width:500px;
+}
+.playerOneSection, .playerTwoSection {
+  display:flex;
+  margin:0 auto;
+  width:50%;
+}
+img{
+  display: flex;
+  height:300px;
+  margin:0 0 0 42%;
+  width:200px;
+}
+#dealerBtn {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: 'Finger Paint', sans-serif;
+  font-size: 24px;
+  justify-content: center;
+  line-height: 1em;
+  margin:0 auto;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+#player1Card {
+  align-items:center;
+  color:#DA1717;
+  display:flex;
+  flex-direction:row;
+  font-size:44px;
+  height:100px;
+  justify-content:end;
+  margin:auto;
+  width:200px;
+}
+#drawCard {
+  align-items:center;
+  color:#8126EE;
+  display:flex;
+  flex-direction:row;
+  font-size:44px;
+  height:100px;
+  justify-content:center;
+  margin:2% auto;
+  width:400px;
+}
+#player2Card {
+  align-items:center;
+  color:#348DE1;
+  display:flex;
+  flex-direction:right;
+  font-size:44px;
+  height:100px;
+  justify-content:end;
+  margin:auto;
+  width:200px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
+#dealerBtn:active,
+#dealerBtn:hover {
+  outline: 0;
+}
+
+#dealerBtn span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+#dealerBtn:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  #dealerBtn {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
