@@ -10,10 +10,14 @@ fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
       .catch(err => {
           console.log(`error ${err}`)
       });
+// below set up to use "hidden" class to toggle/add (didnt work)
 
-const playerOne = document.querySelector('#player1Card')
-const playerTwo = document.querySelector('#player2Card')
-const draw = document.querySelector('#drawCard')
+// const playerOne = document.querySelector('#player1Card')
+// const playerTwo = document.querySelector('#player2Card')
+// const draw = document.querySelector('#drawCard')
+
+//below to use specific class to display one winner at a time, "result" but didnt work maybe not set up correcty.
+
 // const winnerResults = document.querySelectorAll('.result')
 // Array.from(winnerResults).forEach(element => element.addEventListener('click', defineResult))
 
@@ -42,21 +46,25 @@ function drawTwo(){
         let player2Val = convertToNum(data.cards[1].value)
         if(player1Val > player2Val){
           document.querySelector('#player1Card').innerText = 'PLAYER 1 WINS '
-          document.querySelector('#player1Card').classList.toggle('hidden')
-          document.querySelector('#player2Card').classList.add('hidden')
-          document.querySelector('#drawCard').classList.add('hidden')
+
+          //playing with code here to get each element shown depending on winner.
+          // document.querySelector('#player1Card').classList.toggle('hidden')
+          // document.querySelector('#player2Card').classList.add('hidden')
+          // document.querySelector('#drawCard').classList.add('hidden')
           
         }else if(player1Val < player2Val){
           document.querySelector('#player2Card').innerText = 'PLAYER 2 WINS '
-          document.querySelector('#player2Card').classList.toggle('hidden')
-          document.querySelector('#player1Card').classList.add('hidden')
-          document.querySelector('#drawCard').classList.add('hidden')
+          //playing with code here to get each element shown depending on winner.
+          // document.querySelector('#player2Card').classList.toggle('hidden')
+          // document.querySelector('#player1Card').classList.add('hidden')
+          // document.querySelector('#drawCard').classList.add('hidden')
 
         }else{
           document.querySelector('#drawCard').innerText = 'Time for War!'
-          document.querySelector('#drawCard').classList.toggle('hidden')
-          document.querySelector('#player2Card').classList.add('hidden')
-          document.querySelector('#player1Card').classList.add('hidden')
+          //playing with code here to get each element shown depending on winner.
+          // document.querySelector('#drawCard').classList.toggle('hidden')
+          // document.querySelector('#player2Card').classList.add('hidden')
+          // document.querySelector('#player1Card').classList.add('hidden')
         }
 
         
