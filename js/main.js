@@ -10,26 +10,7 @@ fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
       .catch(err => {
           console.log(`error ${err}`)
       });
-// below set up to use "hidden" class to toggle/add (didnt work)
 
-// const playerOne = document.querySelector('#player1Card')
-// const playerTwo = document.querySelector('#player2Card')
-// const draw = document.querySelector('#drawCard')
-
-//below to use specific class to display one winner at a time, "result" but didnt work maybe not set up correcty.
-
-// const winnerResults = document.querySelectorAll('.result')
-// Array.from(winnerResults).forEach(element => element.addEventListener('click', defineResult))
-
-// function defineResult(click){
-//   if(click.target.classList.contains('hidden')){
-//     document.querySelector('#player1Card').classList.toggle('hidden')
-//   }else if(click.target.classList.contains('hidden')){
-//     document.querySelector('#player2Card').classList.toggle('hidden')
-//   }else{
-//     document.querySelector('#drawCard').classList.toggle('hidden')
-//   }
-// }
 
 document.querySelector('button').addEventListener('click', drawTwo)
 
@@ -44,27 +25,19 @@ function drawTwo(){
         document.querySelector('#player2').src = data.cards[1].image
         let player1Val = convertToNum(data.cards[0].value)
         let player2Val = convertToNum(data.cards[1].value)
-        if(player1Val > player2Val){
-          document.querySelector('#player1Card').innerText = 'PLAYER 1 WINS '
 
-          //playing with code here to get each element shown depending on winner.
-          // document.querySelector('#player1Card').classList.toggle('hidden')
-          // document.querySelector('#player2Card').classList.add('hidden')
-          // document.querySelector('#drawCard').classList.add('hidden')
-          
+        document.querySelector('#player1Card').innerText = ''
+        document.querySelector('#player2Card').innerText = ''
+        document.querySelector('#drawCard').innerText = ''
+
+        if(player1Val > player2Val){
+          document.querySelector('#player1Card').innerText = 'Player 1 wins! '
+
         }else if(player1Val < player2Val){
-          document.querySelector('#player2Card').innerText = 'PLAYER 2 WINS '
-          //playing with code here to get each element shown depending on winner.
-          // document.querySelector('#player2Card').classList.toggle('hidden')
-          // document.querySelector('#player1Card').classList.add('hidden')
-          // document.querySelector('#drawCard').classList.add('hidden')
+          document.querySelector('#player2Card').innerText = 'Player 2 wins! '
 
         }else{
-          document.querySelector('#drawCard').innerText = 'Time for War!'
-          //playing with code here to get each element shown depending on winner.
-          // document.querySelector('#drawCard').classList.toggle('hidden')
-          // document.querySelector('#player2Card').classList.add('hidden')
-          // document.querySelector('#player1Card').classList.add('hidden')
+          document.querySelector('#drawCard').innerText = 'Time for War! '
         }
 
         
@@ -88,6 +61,8 @@ function convertToNum(val){
   }
 }
 
+
+//Just practicing some Javascript with this case below:
 let warIn = document.querySelector('.war').addEventListener('mouseover', warHover);
 let warOut = document.querySelector('.war').addEventListener('mouseout', warExit);
 
