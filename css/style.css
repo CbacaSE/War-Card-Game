@@ -28,11 +28,11 @@ h1 {
   width:600px;
 }
 h2 {
-  display:block;
+  display:flex;
   color:#FFFFFF;
   font-size:48px;
-  margin:2% auto;
-  text-align:center;
+  justify-content:center;
+  margin:auto;
   width:500px;
 }
 .playerOneSection, .playerTwoSection {
@@ -43,7 +43,7 @@ h2 {
 img{
   display: flex;
   height:300px;
-  margin:0 0 0 42%;
+  margin:auto 0 auto 42%;
   width:200px;
 }
 #dealerBtn {
@@ -74,11 +74,11 @@ img{
   align-items:center;
   color:#DA1717;
   display:flex;
-  flex-direction:row;
+  flex-direction:right;
   font-size:44px;
   height:100px;
   justify-content:end;
-  margin:auto;
+  margin:auto 5%;
   width:200px;
 }
 #drawCard {
@@ -100,7 +100,7 @@ img{
   font-size:44px;
   height:100px;
   justify-content:end;
-  margin:auto;
+  margin:auto 5%;
   width:200px;
 }
 
